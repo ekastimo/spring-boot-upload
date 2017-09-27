@@ -20,6 +20,25 @@
   function onFileChosen (e) {
     console.log('On file chosen', e)
   }
+    
+   function   handleFileUpload (event) {
+        const file = event.target.files[0]
+        let formData = new FormData()
+        formData.append('file', file)
+        formData.append('name', 'My File')
+        console.log("Sending request")
+        superagent.post('http://localhost:8080/files/add')
+          .set('Accept', 'application/json')
+          .send(formData)
+          .end(function (err, response) {
+            console.log("On response request")
+            if (err) {
+              console.log(err)
+            } else {
+              console.log(response)
+            }
+          })
+  }
 </script>
 
 </body>
