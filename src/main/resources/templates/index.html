@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+<div>
+    <form method="POST" enctype="multipart/form-data" >
+        <table>
+            <tr>
+                <td>Choose File to upload:</td>
+                <td><input type="file" name="file" onchange="onFileChosen"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div>
+
+</div>
+<script >
+  function onFileChosen (e) {
+    console.log('On file chosen', e)
+  }
+</script>
+
+</body>
+</html>
